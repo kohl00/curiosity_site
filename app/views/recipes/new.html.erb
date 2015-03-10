@@ -1,0 +1,41 @@
+<div class="container-fluid">
+	<div class = "row">	 
+
+		<div class = "col-sm-12 col-md-4 col-md-offset-4 well well-lg">
+			<h1><%= @title %></h1>
+	 <%= form_for @recipe do |f| %>
+	 	<% if @recipe.errors.any? %>
+			<% @recipe.errors.full_messages.each do |msg| %>
+				<ul>
+					<li>
+						<div class="alert alert-info"><%= msg %></div>
+					</li>
+				</ul>
+			<% end %>
+		<% end %>
+		  <div class="form-group">
+		    <%= f.label :name %>
+		    <%= f.text_field :name, class: "form-control" %>
+		  </div>
+		  <div class="form-group">
+		    <%= f.label :category %>
+	 		<%= f.text_field :category, class: "form-control" %>
+		  </div>
+		  <div class="form-group">
+		    <%= f.label :instructions %>
+	 		<%= f.text_area :instructions, class: "form-control" %>
+		  </div>
+		  <div class="form-group">
+		    <%= f.label :tag_list , "Tags separated by commas" %>
+	 		<%= f.text_field :tag_list, class: "form-control" %>
+		  </div>
+		  <div>
+		    <%= f.label :image %>
+	 		<%= f.attachment_field :image %>
+		  </div>
+		  <div>
+	 		<%= f.submit "Publish Recipe" , class: "btn btn-primary" %>
+	 	  </div>	 
+	 <% end %>
+	</div>
+</div>

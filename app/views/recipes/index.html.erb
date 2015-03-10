@@ -1,0 +1,22 @@
+<div class="container-fluid index-body">
+	<div class= "nav">
+
+	</div>
+		<table>
+			<thead>
+					<tr>
+						<td><h2>Name</h2></td>
+						<td><h2>Category</h2></td>
+					</tr>
+			</thead>
+			<% @recipes.each do |recipe| %>
+				<tr>
+					<td><%= recipe.name %></td>
+					<td><%= recipe.category %></td>
+				</tr>
+			<% end %>
+		</table>
+		<div class="embed-container">
+			<%= embed("https://www.youtube.com/watch?v=YQZ2UeOTO3I") %>
+		</div>
+</div>

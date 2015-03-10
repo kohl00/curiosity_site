@@ -1,0 +1,20 @@
+<p>
+	<%= @clean_recipe.pretty_instructions %>
+	<%= image_tag attachment_url(@recipe, :image, :fill, 300, 300, format: "jpg") %>
+</p>
+<div>
+	<h2>Comments</h2>
+	<div>
+		<%= form_for([@recipe, @comment]) do |f| %>
+			<%= f.text_area :body, id: "comment_body", placeholder: "Write something" %>
+			<%= f.submit "Submit" %>
+		<% end %>
+	</div>
+	<span>character count:</span><div id="counter">0</div>
+</div>
+<div class = "comment_list">
+ 	<% @recipe_comments.each do |comment| %>
+ 		<p><%= comment.user_id %><%= comment.body %></p>
+ 	<% end %>
+</div>
+
