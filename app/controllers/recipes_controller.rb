@@ -26,6 +26,7 @@ before_action :set_recipe, except: [:index, :new, :create]
     @comment = @recipe.comments.build
     @clean_recipe = Sanitizer.new(@recipe)
     @recipe_comments = Recipe.includes(:comments).where(id: params[:id])[0].comments
+    @like = @recipe.likes.new
   
   end
 

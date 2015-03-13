@@ -15,6 +15,7 @@
 class Recipe < ActiveRecord::Base
 	belongs_to :user
 	has_many :comments
+  has_many :likes
 	has_many :taggings
 	has_many :tags, through: :taggings
 
@@ -56,6 +57,10 @@ class Recipe < ActiveRecord::Base
         @users = User.all.each do |user|
             GreetingMailer.send_notification(self,user).deliver_now
        end
-  end
+    end
+
+    def liked_by?(user)
+      self.likes.where(:user_id => user.id).any?
+    end
 
 end
