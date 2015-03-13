@@ -31,4 +31,7 @@ class User < ActiveRecord::Base
   has_many :likes
   
   attachment :image
+
+
+
 end

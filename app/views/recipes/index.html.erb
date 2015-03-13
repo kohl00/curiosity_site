@@ -13,6 +13,7 @@
 				<tr>
 					<td><%= recipe.name %></td>
 					<td><%= recipe.category %></td>
+					<td><%= link_to "Details", recipe_path(recipe) %></td>
 				</tr>
 			<% end %>
 		</table>

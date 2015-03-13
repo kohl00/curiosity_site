@@ -23,7 +23,7 @@ var main = function(){
 		$("#counter").text(" ");
 		var patt1 = /\S+/g;
 		var match = $(this).val().match(patt1).length;
-		//var count = $(this).val().length;
+		
 		$("#counter").text(match);
 
 		if(match > 0 && match <15){

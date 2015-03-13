@@ -52,4 +52,10 @@ class Recipe < ActiveRecord::Base
     	end
   	end
 
+    def send_notification_email
+        @users = User.all.each do |user|
+            GreetingMailer.send_notification(self,user).deliver_now
+       end
+  end
+
 end

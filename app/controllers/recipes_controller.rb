@@ -10,7 +10,9 @@ before_action :set_recipe, except: [:index, :new, :create]
   def create
   	@recipe = Recipe.new(recipe_params)
   	if @recipe.save
+      @recipe.send_notification_email
   		redirect_to @recipe, success: "Successful"
+
   	else
       render 'new'
     end
@@ -24,7 +26,7 @@ before_action :set_recipe, except: [:index, :new, :create]
     @comment = @recipe.comments.build
     @clean_recipe = Sanitizer.new(@recipe)
     @recipe_comments = Recipe.includes(:comments).where(id: params[:id])[0].comments
-    session[:poo] = current_user.id
+  
   end
 
   def update
