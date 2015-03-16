@@ -1,1 +1,2 @@
 $("#likes_partial").html("<%= j render :partial=> "recipes/likes/like" %>");
+$(".count").text("<%= @recipe.likes.count %>");

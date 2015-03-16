@@ -28,13 +28,14 @@
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
-	        <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
-	        <li><a href="#">Profile</a></li>
+	        <li class="active"><%= link_to "Home", recipes_path %></li>
+	        <li><%= link_to "Profile", edit_user_registration_path %></li>
 	      </ul>
+	      <span class="signed_in_as"> Signed in as: <%= current_user.name %></span>
 	      <%= search_form_for @q, url: recipes_path, html: { class: "navbar-form navbar-right", role: "search"} do |f| %>
 	        <div class="form-group">
-	          <%= f.label :name_or_category_or_tags_cont, "Search" %>
-  		      <%= f.search_field :name_or_category_or_tags_name_cont, class: "form-control" %>
+	          <%#= f.label :name_or_category_or_tags_cont, "Search" %>
+  		      <%= f.search_field :name_or_category_or_tags_name_cont, placeholder: "Search", class: "form-control" %>
 	        </div>
 	        <%= f.submit "Submit", class: "btn btn-default" %>
 	      <% end %>

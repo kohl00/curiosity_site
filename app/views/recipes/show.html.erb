@@ -3,9 +3,12 @@
 	<%= @clean_recipe.pretty_instructions %>
 	<%= image_tag attachment_url(@recipe, :image, :fill, 300, 300, format: "jpg") %>
 </p>
-<div id="likes_partial" class="well">
+<div id="likes_partial">
    <%= render partial: 'recipes/likes/like' %>
 </div>
+<span class="count">
+	<%= @recipe.likes.count %>
+</span>
 <div>
 	<h2>Comments</h2>
 	<div>

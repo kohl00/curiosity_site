@@ -1,5 +1,7 @@
-<% if @recipe.liked_by?(current_user) %>
-	<%= link_to "Unlike", recipe_like_path(@recipe,@like), method: :post, remote: true %>
-<% else %>
-	<%= link_to "Like", recipe_like_path(@recipe,@like), method: :post, remote: true %>
+<% if signed_in? %>
+	<% if @recipe.liked_by?(current_user) %>
+		<%= link_to "Unlike", recipe_like_path(@recipe,@like), method: :post, class: "btn btn-primary unlike", remote: true %>
+	<% else %>
+		<%= link_to "Like", recipe_like_path(@recipe,@like), method: :post, class: "btn btn-primary like", remote: true %>
+	<% end %>
 <% end %>

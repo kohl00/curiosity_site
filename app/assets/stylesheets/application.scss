@@ -20,6 +20,18 @@
   @extend .has-error;
 }
 
+a{
+  color: #FF0000;
+}
+
+//nav
+.signed_in_as{
+    display: inline-block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 //index
 .nav, .navbar-default{
@@ -55,5 +67,5 @@
 #likes_partial{
  display: inline-block;
  padding: 0 10px;
- border: 1px solid cornflowerblue;
+ 
 }
