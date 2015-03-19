@@ -67,5 +67,61 @@ a{
 #likes_partial{
  display: inline-block;
  padding: 0 10px;
+}
+
+.main, html, body{
+  /* important */
+  height: 100%;
+}
  
+.cd-fixed-bg {
+  min-height: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+}
+ 
+.cd-fixed-bg.cd-bg-1 {
+  background-image: url("beans.jpg");
+}
+.cd-fixed-bg.cd-bg-2 {
+  background-image: url("beach.jpg");
+}
+.cd-fixed-bg.cd-bg-3 {
+  background-image: url("boat.jpg");
+}
+.welcome{
+   text-align: center;
+   position: relative;
+   top: 300px;
+  span{
+    color: white;
+    font-size: 26px;
+  }
+}
+.cd-scrolling-bg {
+  min-height: 50%;
+  opacity: .6;
+  margin-bottom: -10px;
+
+    .splash-content{
+    margin: 0 0 10px 10px;
+    text-align: center;
+    position: relative;
+    top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &.cd-color-1{
+    background-color: #759C83;
+  }
+  &.cd-color-2{
+    background-color: #5F5182;
+  } 
+  &.cd-color-3{
+    background-color: #DBD688;
+  }
 }

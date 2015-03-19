@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get '/welcome', to: "splash#welcome"
+
   devise_for :users
 
   resources :recipes do
@@ -9,5 +11,5 @@ Rails.application.routes.draw do
 
   get '/tag/:tag', to: "recipes#tag"
 
-  root to: "recipes#index"
+  root to: "splash#welcome"
 end
