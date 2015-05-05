@@ -25,13 +25,12 @@ class Recipe < ActiveRecord::Base
 	validates :category, presence: true
 	validates :instructions, presence: true
 
-    attachment :image
+    attachment :image, type: :image
 
 	def self.tagged_with(name)
 		 tag = Tag.find_by(name: name)
 		 if !tag.nil?
     	 	recipes = tag.recipes 
-    	 	
     	 else
     	 	return false
     	 end

@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   
-#before_action :authenticate_user!, only: [:create, :update, :destroy]
+before_action :authenticate_user!, only: [:create, :update, :destroy, :index]
 before_action :set_recipe, except: [:index, :new, :create]
   def new
     @title = "Submit a Recipe"

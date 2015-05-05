@@ -1,12 +1,13 @@
 <div class="container-fluid index-body">
-	<div class= "nav">
 
-	</div>
 		<table>
 			<thead>
 					<tr>
 						<td><h2>Name</h2></td>
 						<td><h2>Category</h2></td>
+					</tr>
+					<tr>
+						<%= link_to "New Recipe", new_recipe_path %>
 					</tr>
 			</thead>
 			<% @recipes.each do |recipe| %>
@@ -18,6 +19,6 @@
 			<% end %>
 		</table>
 		<div class="embed-container">
-			<%= embed("https://www.youtube.com/watch?v=YQZ2UeOTO3I") %>
+			<%= embed("https://www.youtube.com/watch?v=EsPeUKf7NDA") %>
 		</div>
 </div>
